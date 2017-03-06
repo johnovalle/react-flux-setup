@@ -17,6 +17,7 @@ class ItemStore extends EventEmitter {
             text
         });
         this.emit('change');
+        console.log(this.items);
     }
 
     getAll() {
@@ -32,5 +33,5 @@ class ItemStore extends EventEmitter {
 
 const itemStore = new ItemStore;
 dispatcher.register(itemStore.handleActions.bind(itemStore));
-
+//window.dispatcher = dispatcher;
 export default itemStore;
